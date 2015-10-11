@@ -1,0 +1,78 @@
+% This is the setup file. It contains usepackage commands, acronyms, and other
+% useful commands needed to set up the paper. Uncomment the relevant sections to
+% use them.
+
+% Packages. Make sure your LaTeX distribution actually has the packages!
+
+% \usepackage{times} % For Times font
+%\usepackage{mathptmx}  % Postscript fonts for math mode
+%\usepackage{geometry}  % Use to get slightly more page space
+%\usepackage{fullpage}  % To use the full page space
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amsthm}
+%\usepackage{xspace}  % For spacing after user-defined commands and others.
+%\usepackage{graphicx}  % To allow figures
+%\usepackage{psfrag}
+\usepackage[hyphens]{url}  % To make URLs display correctly in citations. The
+                           % hyphens option allows line breaks after hyphens.
+%\usepackage{pifont}
+\usepackage{color}  % Used to highlight comments
+%\usepackage{boxedminipage}
+%\usepackage{comment}
+%\usepackage{fancyvrb}  % Better verbatim environment -- see docs
+%\usepackage{listings}
+%\usepackage{subfigure}
+%\usepackage{cite}
+%\usepackage{paralist}  % For tighter lists
+\usepackage{acro}  % Acronyms
+\usepackage{hyperref}  % Hyperlinks in citations and references
+
+
+% Fix ugly citation style: [1],[2] --> [1,2]
+
+%\usepackage[noadjust]{cite}
+%\renewcommand{\citepunct}{, }
+%\renewcommand{\citedash}{--}
+
+
+% Example acronym definition. Uncomment to use.
+
+\DeclareAcronym{pki}{
+  short={PKI},
+  long={public-key infrastructure},
+}
+\DeclareAcronym{tls}{
+  short={TLS},
+  long={Transport Layer Security},
+}
+%\DeclareAcronym{pki}{
+  %short={PKI},
+  %long={public-key infrastructure},
+  %%short-plural={s},  % default
+  %%long-plural={s},  % default
+  %%long-plural-form={},  % use for irregular plurals
+  %%short-indefinite={a},  % plural
+  %%long-indefinite={a},  %plural
+  %%alt={},  % alternate form
+  %%alt-indefinite={a},
+  %%short-format={},  % formattign for first short use
+  %%long-format={},  % formatting for first long use
+  %%first-long-format={\capitalisewords},  % must use mfirstuc package
+  %%pdfstring={},  % string to use with hyperref section headings, etc.
+%}
+
+% Capitalize autoref names
+\renewcommand\chapterautorefname{Chapter}
+
+
+% User-defined commands go here.
+
+\newcommand{\steve}[1]{\textcolor{magenta}{SM: #1}}
+
+
+% Compression tricks - use if we need more space.
+
+%\geometry{tmargin=.7in,bmargin=.7in,lmargin=.7in,rmargin=.7in}
+%\renewcommand{\baselinestretch}{0.99}
+
