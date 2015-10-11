@@ -1,24 +1,18 @@
-PAPERNAME=paper
+PAPER = paper
+LATEXMK = latexmk
+FLAGS = -pdf
+CLEAN_FLAGS = -c
+CLEAN_FULL_FLAGS = -C
 
-$(PAPERNAME): $(PAPERNAME).tex setup.tex bib.bib chp/*.tex sec/*
-	pdflatex $(PAPERNAME)
-	bibtex $(PAPERNAME)
-	pdflatex $(PAPERNAME)
-	pdflatex $(PAPERNAME)
+.PHONY = all paper clean clean-full
 
-fastcompile:
-	latex paper
-	dvips -Ppdf -G0 -t letter -o $(PAPERNAME).ps paper
-	ps2pdf -dCompatibilityLevel=1.3 $(PAPERNAME).ps
+all: paper
 
-mate:
-	pdflatex -synctex=1 -interaction nonstopmode $(PAPERNAME)
-
-gv: $(PAPERNAME).ps
-	gv $(PAPERNAME).ps &
-
-tar:
-	tar -cvzf $(PAPERNAME).tar.gz *.tex *.bib *.bst *.perl *.pl makefile
+paper:
+	$(LATEXMK) $(FLAGS) $(PAPER)
 
 clean:
-	rm -f $(PAPERNAME).ps $(PAPERNAME).pdf *.dvi *.aux *.log *.blg *.bbl *~
+	$(LATEXMK) $(CLEAN_FLAGS) $(PAPER)
+
+clean-full:
+	$(LATEXMK) $(CLEAN_FULL_FLAGS) $(PAPER)
